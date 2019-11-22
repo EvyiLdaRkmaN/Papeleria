@@ -1,0 +1,19 @@
+﻿<Window x:Class="Papeleria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Papeleria"
+        mc:Ignorable="d"
+        Title="Inicio de secion" Height="300" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="contraseña">
+        <Image Margin="100,10,100,0" Height="76" VerticalAlignment="Top" Source="Iconos/icons8-administrador-del-hombre-104.png"/>
+        <Label Content="Nombre de usuario" VerticalAlignment="Top" Margin="75,88,75,0" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbUsuario" Height="23" Margin="90,120,90,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+        <PasswordBox x:Name="boxPassword" Margin="90,174,90,0" VerticalAlignment="Top" Height="23" VerticalContentAlignment="Center" KeyUp="boxPassword_KeyUp"/>
+        <Label Content="Contraseña" Margin="75,144,75,0" Height="25" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Entrar" Margin="172,224,60,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="entrar" Background="#FF8FFF6E" Height="25" Width="60" BorderBrush="{x:Null}"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="61,224,0,0" VerticalAlignment="Top" Width="60" Background="#FFFB4545"  Height="25" BorderBrush="{x:Null}" Click="Button_Click" RenderTransformOrigin="0.75,0.811"/>
+    </Grid>
+</Window>

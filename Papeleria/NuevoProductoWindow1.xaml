@@ -1,0 +1,32 @@
+﻿<Window x:Class="Papeleria.NuevoProductoWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Papeleria"
+        mc:Ignorable="d"
+        Title="Nuevo Producto" Height="450" Width="450"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="92,149,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="92,180,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Presio unitario:" HorizontalAlignment="Left" Margin="92,211,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="92,242,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Proveedor:" HorizontalAlignment="Left" Margin="92,273,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="tbNombre" HorizontalAlignment="Left" Height="23" Margin="226,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyUp="tbNombre_KeyUp"/>
+        <TextBox x:Name="tbCantidad" HorizontalAlignment="Left" Height="23" Margin="226,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyUp="tbCantidad_KeyUp" />
+        <TextBox x:Name="tbPrecioUnitario" HorizontalAlignment="Left" Height="23" Margin="226,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyUp="tbPrecioUnitario_KeyUp" />
+        <TextBox x:Name="tbDescripcion" HorizontalAlignment="Left" Height="23" Margin="226,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" KeyUp="Descripcion_KeyUp" />
+        <ComboBox x:Name="cmbProveedores" HorizontalAlignment="Left" Margin="226,273,0,0" VerticalAlignment="Top" Width="144" SelectedIndex="0" Text="Proveedores">
+            
+        </ComboBox>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="92,360,0,0" VerticalAlignment="Top" Width="74" Click="btnCancelar_Click" />
+        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="294,360,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click" />
+
+        <Image HorizontalAlignment="Left" Height="141" Margin="147,10,0,0" VerticalAlignment="Top" Width="151" Source="IconosGeerales/codigo-de-barras(128).png"/>
+        <Label Content="Codigo" HorizontalAlignment="Left" Margin="92,304,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="tbCodigo" HorizontalAlignment="Left" Height="23" Margin="226,308,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144" KeyUp="tbCodigo_KeyUp"/>
+
+    </Grid>
+</Window>
