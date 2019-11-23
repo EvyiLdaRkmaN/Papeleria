@@ -31,7 +31,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            String consulta = "select idLiquidacion, usuarios.Nombre,usuarios.ApellidoP,usuarios.ApellidoM, totalCaja,FechaCorte from liquidacionCaja join usuarios on liquidacionCaja.idUsuario = usuarios.idUsuario;";
+            /*String consulta = "select idLiquidacion, usuarios.Nombre,usuarios.ApellidoP,usuarios.ApellidoM, totalCaja,FechaCorte from liquidacionCaja join usuarios on liquidacionCaja.idUsuario = usuarios.idUsuario;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -50,13 +50,13 @@ namespace Papeleria
                     FechaCorte = row["FechaCorte"].ToString()
                 };
                 dataGridVenta.Items.Add(data);
-            }
+            }*/
         }
 
 
         public void mostrarTablaBusqueda(String dato, int opcion)
         {
-            String prueba = "";
+            /*String prueba = "";
             switch (opcion)
             {
                 case 1:
@@ -88,7 +88,7 @@ namespace Papeleria
                     FechaCorte = row["FechaCorte"].ToString()
                 };
                 dataGridVenta.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)

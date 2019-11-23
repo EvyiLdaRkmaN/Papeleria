@@ -37,7 +37,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            btnVer.IsEnabled = false;
+            /*btnVer.IsEnabled = false;
             String consulta = "select ventaProducto.idVentaProducto, usuarios.Nombre, usuarios.ApellidoP,usuarios.ApellidoM, ventaProducto.total,ventaProducto.FechaHora,ventaProducto.EstadoVenta,usuarios.idUsuario from ventaProducto join usuarios on ventaProducto.idUsuario = usuarios.idUsuario;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
@@ -59,12 +59,12 @@ namespace Papeleria
                     idUsuario = row["idUsuario"].ToString()
                 };
                 dataGridVenta.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            btnVer.IsEnabled = false;
+            /*btnVer.IsEnabled = false;
             String prueba = "";
             switch (opcion)
             {
@@ -95,7 +95,7 @@ namespace Papeleria
                     idUsuario = row["idUsuario"].ToString()
                 };
                 dataGridVenta.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnReset_Click(object sender, RoutedEventArgs e)

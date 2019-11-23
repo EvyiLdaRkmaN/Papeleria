@@ -271,7 +271,7 @@ namespace Papeleria
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            String nombre = tbNombre.Text,
+            /*String nombre = tbNombre.Text,
                 apellidoP = tbApellidoP.Text,
                 apellidoM = tbApellidoM.Text,
                 telefono = tbTelefono.Text,
@@ -315,7 +315,7 @@ namespace Papeleria
                     }
                 }
 
-            }
+            }*/
         }
     }
 }

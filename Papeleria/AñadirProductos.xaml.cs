@@ -67,13 +67,13 @@ namespace Papeleria
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            int resultado;
+            /*int resultado;
             resultado = new BaseDeDatos().añadirProductos(id,cantidad);
             if (resultado != 1)
             {
                 new Productos(idUsuario).Show();
                 this.Close();
-            }
+            }*/
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

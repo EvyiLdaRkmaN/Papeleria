@@ -134,13 +134,13 @@ namespace Papeleria
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este producto?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            /*MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este producto?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             if (boton == MessageBoxResult.OK)
             {
                 new BaseDeDatos().eliminarProducto(id);
                 dataGridUsuarios.Items.Clear();
                 mostrarTabla();
-            }
+            }*/
         }
 
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
@@ -151,7 +151,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnAñadir.IsEnabled = false;
             String consulta = "select idProducto,nombre,cantidad ,precioUnitario ,descripcion,idProvedor,Codigo, proveedores.nombreProvedor from productos" +
@@ -176,12 +176,12 @@ namespace Papeleria
                     proveedor = row["nombreProvedor"].ToString(),
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String prueba = "";
             switch (opcion)
@@ -215,7 +215,7 @@ namespace Papeleria
                     proveedor = row["nombreProvedor"].ToString(),
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
     }
 }

@@ -22,11 +22,11 @@ namespace Papeleria
         private int idVenta,idUsuario;
         public VentaRealizadaPor(int idVenta, int idUsuario)
         {
-            InitializeComponent();
+            /*InitializeComponent();
             this.idVenta = idVenta;
             this.idUsuario = idUsuario;
             lbVendedor.Content = new BaseDeDatos().obtenerVendedor(idVenta);
-            lbCajero.Content = new BaseDeDatos().obtenerCajero(idVenta);
+            lbCajero.Content = new BaseDeDatos().obtenerCajero(idVenta);*/
         }
 
         private void btnVisualizar_Click(object sender, RoutedEventArgs e)

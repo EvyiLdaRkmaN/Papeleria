@@ -25,7 +25,7 @@ namespace Papeleria
         private int idUsuario, idVenta, modificar = 0;
         public Vender(int id)
         {
-            InitializeComponent();
+            /*InitializeComponent();
             this.idUsuario = id;
             mostrarTabla();
             String puesto = new BaseDeDatos().getPuesto(idUsuario);
@@ -36,21 +36,21 @@ namespace Papeleria
             else
             {
                 btnSalir.Visibility = Visibility.Hidden;
-            }
+            }*/
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
 
             //int numeroVenta = new BaseDeDatos().NuevaVenta(idUsuario);
-            new BaseDeDatos().registrarVenta(0,idUsuario,0,0);
+            /*new BaseDeDatos().registrarVenta(0,idUsuario,0,0);
             new NuevaVenta(idUsuario).Show();
-            this.Close();
+            this.Close();*/
         }
 
         public void mostrarTabla()
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String consulta = "select idVentaProducto, usuarios.Nombre,usuarios.ApellidoP,usuarios.ApellidoM, total,FechaHora, ventaProducto.idUsuario from ventaProducto join usuarios on ventaProducto.idUsuario = usuarios.idUsuario where usuarios.idUsuario = "+idUsuario+ " and EstadoVenta != 'Pagado';";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
@@ -72,12 +72,12 @@ namespace Papeleria
                     idUsuario = row["idUsuario"].ToString()
                 };
                 dataGridVentas.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnVer.IsEnabled = false;
             String prueba = "";
@@ -109,7 +109,7 @@ namespace Papeleria
                     idUsuario = row["idUsuario"].ToString()
                 };
                 dataGridVentas.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
@@ -120,13 +120,13 @@ namespace Papeleria
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar esta venta?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            /*MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar esta venta?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             if (boton == MessageBoxResult.OK)
             {
                 new BaseDeDatos().eliminarVenta(idVenta);
                 dataGridVentas.Items.Clear();
                 mostrarTabla();
-            }
+            }*/
         }
 
         private void btnReset_Click(object sender, RoutedEventArgs e)

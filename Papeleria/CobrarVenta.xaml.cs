@@ -33,7 +33,7 @@ namespace Papeleria
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToDouble(pago) < Convert.ToDouble(lbTotal.Content))
+            /*if (Convert.ToDouble(pago) < Convert.ToDouble(lbTotal.Content))
             {
                 MessageBox.Show("El pago no puede ser menor al total de la venta", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -42,7 +42,7 @@ namespace Papeleria
                 new BaseDeDatos().registrarPago(Convert.ToDouble(lbTotal.Content), idUsuario, idVenta);
                 new Caja(idUsuario).Show();
                 this.Close();
-            }
+            }*/
         }
 
         private void btCancelar_Click(object sender, RoutedEventArgs e)

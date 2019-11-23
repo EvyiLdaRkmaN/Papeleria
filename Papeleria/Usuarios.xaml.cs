@@ -33,7 +33,7 @@ namespace Papeleria
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este usuario?","Alerta",MessageBoxButton.OKCancel,MessageBoxImage.Warning);
+            /*MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este usuario?","Alerta",MessageBoxButton.OKCancel,MessageBoxImage.Warning);
             if (boton == MessageBoxResult.OK)
             {
                 if (id == 1)
@@ -53,7 +53,7 @@ namespace Papeleria
                 }
                 dataGridUsuarios.Items.Clear();
                 mostrarTabla();
-            }
+            }*/
         }
         
         private void tbBusqueda_GotFocus(object sender, RoutedEventArgs e)
@@ -108,7 +108,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String consulta = "select idUsuario,Nombre,ApellidoP ,ApellidoM ,Sexo,Telefono,Edad,Puesto,NombreUsuario,Contraseña from usuarios;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
@@ -128,7 +128,7 @@ namespace Papeleria
                     contraseña = row["Contraseña"].ToString()
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridUsuarios_KeyUp(object sender, KeyEventArgs e)
@@ -194,7 +194,7 @@ namespace Papeleria
 
         private void dataGridBuscador(int opcion,String dato)
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String prueba = "";
             switch (opcion)
@@ -231,7 +231,7 @@ namespace Papeleria
                     contraseña = row["Contraseña"].ToString()
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
     }
 }

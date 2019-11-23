@@ -32,7 +32,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String consulta = "select idProveedor,nombreProvedor,apellido_P ,apellido_M ,telefono,empresa from proveedores;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
@@ -53,12 +53,12 @@ namespace Papeleria
                     Empresa = row["empresa"].ToString()
                 };
                 dataGridProveedores.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            btnModificar.IsEnabled = false;
+            /*btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             String prueba = "";
             switch (opcion)
@@ -89,7 +89,7 @@ namespace Papeleria
                     Empresa = row["empresa"].ToString()
                 };
                 dataGridProveedores.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
@@ -150,13 +150,13 @@ namespace Papeleria
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este usuario?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            /*MessageBoxResult boton = MessageBox.Show("¿Realmente desea eliminar este usuario?", "Alerta", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             if (boton == MessageBoxResult.OK)
             {
                 new BaseDeDatos().eliminarProveedor(id);
                 dataGridProveedores.Items.Clear();
                 mostrarTabla();
-            }
+            }*/
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)

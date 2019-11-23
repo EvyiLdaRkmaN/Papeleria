@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace Papeleria
 {
     /// <summary>
@@ -47,6 +50,7 @@ namespace Papeleria
                 if (usuario.Equals("Admin") && contraseña.Equals("1234"))
                 {
                     new PrincipalAdmin(0).Show();
+                    new BaseDeDatos().obtenerConexion();
                     this.Close();
                 }
                 else

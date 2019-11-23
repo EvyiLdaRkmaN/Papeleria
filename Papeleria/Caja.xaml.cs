@@ -25,7 +25,7 @@ namespace Papeleria
         private double total;
         public Caja(int idUsuario)
         {
-            InitializeComponent();
+            /*InitializeComponent();
             this.idUsuario = idUsuario;
             mostrarTabla();
             mostrarPagados();
@@ -42,14 +42,14 @@ namespace Papeleria
             else
             {
                 btnSalir.Visibility = Visibility.Hidden;
-            }
+            }*/
 
         }
 
 
         public void mostrarTabla()
         {
-            btnPagar.IsEnabled = false;
+            /*btnPagar.IsEnabled = false;
             String consulta = "select idVentaProducto, usuarios.Nombre,usuarios.ApellidoP,usuarios.ApellidoM, total,FechaHora, ventaProducto.idUsuario from ventaProducto join usuarios on ventaProducto.idUsuario = usuarios.idUsuario where EstadoVenta = 'Pendiente';";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
@@ -66,12 +66,12 @@ namespace Papeleria
                     FechaHora = row["FechaHora"].ToString()
                 };
                 dataGridVentas.Items.Add(data);
-            }
+            }*/
         }
 
         public void mostrarPagados()
         {
-            String consulta = "select idVenta, pagoTotal,fechaHora from pagoVenta where idUsuario = " + idUsuario+" and corte = 0;";
+            /*String consulta = "select idVenta, pagoTotal,fechaHora from pagoVenta where idUsuario = " + idUsuario+" and corte = 0;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -87,12 +87,12 @@ namespace Papeleria
                     FechaHora = row["fechaHora"].ToString()
                 };
                 dataGridPagados.Items.Add(data);
-            }
+            }*/
         }
 
         public void mostrarTablaBusqueda(String dato)
         {
-            btnPagar.IsEnabled = false;
+            /*btnPagar.IsEnabled = false;
             String consulta = "select idVentaProducto, usuarios.Nombre,usuarios.ApellidoP,usuarios.ApellidoM, total,FechaHora, ventaProducto.idUsuario from ventaProducto join usuarios on ventaProducto.idUsuario = usuarios.idUsuario where idVentaProducto = "+dato+";";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
@@ -109,12 +109,12 @@ namespace Papeleria
                     FechaHora = row["FechaHora"].ToString()
                 };
                 dataGridVentas.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnVolver_Click(object sender, RoutedEventArgs e)
         {
-            int salida = new BaseDeDatos().validarSalidaCorte(idUsuario);
+            /*int salida = new BaseDeDatos().validarSalidaCorte(idUsuario);
             if (salida == 1)
             {
                 new PrincipalAdmin(idUsuario).Show();
@@ -123,7 +123,7 @@ namespace Papeleria
             else
             {
                 MessageBox.Show("No puedes salir hasta realizar tu corte de caja ", "Alerta", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+            }*/
             
         }
 
@@ -187,7 +187,7 @@ namespace Papeleria
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-            int salida = new BaseDeDatos().validarSalidaCorte(idUsuario);
+            /*int salida = new BaseDeDatos().validarSalidaCorte(idUsuario);
             if (salida == 1)
             {
                 new MainWindow().Show();
@@ -197,16 +197,16 @@ namespace Papeleria
             {
                 MessageBox.Show("No puedes salir hasta realizar tu corte de caja ", "Alerta", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            
+            */
         }
 
         private void btnCorte_Click(object sender, RoutedEventArgs e)
         {
-            double total = new BaseDeDatos().getTotalCobrado(idUsuario);
+            /*double total = new BaseDeDatos().getTotalCobrado(idUsuario);
             MessageBox.Show("total vendido = "+total, "Mensaje", MessageBoxButton.OK, MessageBoxImage.Hand);
             new BaseDeDatos().realizarCorte(idUsuario);
             dataGridPagados.Items.Clear();
-            mostrarPagados();
+            mostrarPagados();*/
         }
 
         private void tbBusqueda_GotFocus(object sender, RoutedEventArgs e)

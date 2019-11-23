@@ -75,7 +75,7 @@ namespace Papeleria
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult boton =  MessageBoxResult.None;
+            /*MessageBoxResult boton =  MessageBoxResult.None;
             String nombre = tbNombre.Text,
                 cantidad = tbCantidad.Text,
                 precioUnitario = tbPrecioUnitario.Text,
@@ -118,7 +118,7 @@ namespace Papeleria
                         this.Close();
                     }
                 }
-            }
+            }*/
         }
 
         //todos los eventos de key
@@ -298,7 +298,7 @@ namespace Papeleria
 
         private void llenarcmbProveedores()
         {
-            DataSet dsd = new DataSet();
+            /*DataSet dsd = new DataSet();
             SqlDataAdapter dad = new SqlDataAdapter("Select idProveedor,nombreProvedor from proveedores", new BaseDeDatos().obtenerConexion());
             //se indica con que tabla se llena
             dad.Fill(dsd, "proveedores");
@@ -306,7 +306,7 @@ namespace Papeleria
             //comboBoxPrueba.v
             cmbProveedores.SelectedValuePath = "idProveedor";
             //Console.WriteLine("selectedItem = "+comboBoxTrabajo.SelectedItem+" selectedIndex"+comboBoxTrabajo.SelectedIndex);
-            cmbProveedores.DisplayMemberPath = "nombreProvedor";
+            cmbProveedores.DisplayMemberPath = "nombreProvedor";*/
         }
     }
 }

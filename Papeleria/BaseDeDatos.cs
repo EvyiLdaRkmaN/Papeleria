@@ -5,44 +5,60 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Globalization;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 
 namespace Papeleria
 {
     class BaseDeDatos
     {
-        public SqlConnection conexion = new SqlConnection();
+
+        
+        //public SqlConnection conexion = new SqlConnection();
         //private String estadoConexion;
-        SqlCommand objSqlComand = new SqlCommand();
+        
+        //SqlCommand objSqlComand = new SqlCommand();
+        
 
         //metodo para realizar la conexion que retorna el estado de la conexion
-        public SqlConnection obtenerConexion()
+        public MySqlConnection obtenerConexion()
         {
-            //Cadena de conexion con la informacion de la base de datos
-            conexion = new SqlConnection("Persist Security Info=False;User ID=yordy;Password=7671067498;Initial Catalog=papeleria;");
 
+            //Cadena de conexion con la informacion de la base de datos
+            //conexion = new SqlConnection("Persist Security Info=False;User ID=yordy;Password=7671067498;Initial Catalog=papeleria;");
             //capturar en caso de que haya error en la conexion
+            string connStr = "server=localhost;user=root;database=zapateriaelena;port=3306;password=";
+            MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
-                conexion.Open();
-                Console.WriteLine("Conexion exictosa");
-                return conexion;
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+                Console.WriteLine("Connecting to MySQL..." + conn.State.ToString());
+                // Perform database operations
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    Console.WriteLine("Conección establecida");
+                }
+                return conn;
             }
             catch (Exception ex)
             {
-
-                Console.WriteLine("Problemas con la conexion");
+                
+                Console.WriteLine(ex.ToString());
                 throw ex;
             }
+            
         }
 
         private void cerrarConexionBase()
         {
-            conexion.Dispose();
+            //conn.Close();
         }
 
         //verificamos el puesto los datos del inicio de secion de los usuarios.
         //COLLATE Latin1_General_CS_AS ayuda a que se tomen en cuenta mayusculas y minusculas en la consulta y evitar que se traiga algun dato no deseado
-        public String inicioSecion(String usuario, String contraseña)
+        /**public String inicioSecion(String usuario, String contraseña)
         {
             String puesto = "";
             try
@@ -699,8 +715,8 @@ namespace Papeleria
                 //DateTime.Now.ToString("G", CultureInfo.CreateSpecificCulture("nl - BE"));
                 //System.Windows.MessageBox.Show("Entra despues de los if");
                 //Console.WriteLine("insert into ventaProducto (FechaHora,idUsuario,EstadoVenta) values ('"+ DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "',total,"+idUsuario+")");
-                /*comando.CommandText = "insert into ventaProducto '" + nombre + "'," + canitdad + ", " + preciUnitario + ",'" + descripcion + "'," + idProveedor + ",'" + codigo + "';";
-                comando.ExecuteNonQuery();*/
+                comando.CommandText = "insert into ventaProducto '" + nombre + "'," + canitdad + ", " + preciUnitario + ",'" + descripcion + "'," + idProveedor + ",'" + codigo + "';";
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -775,8 +791,8 @@ namespace Papeleria
                 //DateTime.Now.ToString("G", CultureInfo.CreateSpecificCulture("nl - BE"));
                 //System.Windows.MessageBox.Show("Entra despues de los if");
                 //Console.WriteLine("insert into ventaProducto (FechaHora,idUsuario,EstadoVenta) values ('"+ DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + "',total,"+idUsuario+")");
-                /*comando.CommandText = "insert into ventaProducto '" + nombre + "'," + canitdad + ", " + preciUnitario + ",'" + descripcion + "'," + idProveedor + ",'" + codigo + "';";
-                comando.ExecuteNonQuery();*/
+                comando.CommandText = "insert into ventaProducto '" + nombre + "'," + canitdad + ", " + preciUnitario + ",'" + descripcion + "'," + idProveedor + ",'" + codigo + "';";
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -1087,7 +1103,6 @@ namespace Papeleria
             }
             cerrarConexionBase();
             return total;
-        }
-        
+        }*/        
     }
 }

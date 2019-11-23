@@ -23,7 +23,7 @@ namespace Papeleria
     /// </summary>
     public partial class NuevaVenta : Window
     {
-        private int idVenta = new BaseDeDatos().obtenerUltimaVenta(),idUsuario, idProducto,idUnico,ver =0,idProducto2;
+        private int idVenta = 0/*new BaseDeDatos().obtenerUltimaVenta(),idUsuario, idProducto,idUnico,ver =0,idProducto2*/;
         private String cantidad, cantidad2;
 
         private double total;
@@ -33,17 +33,17 @@ namespace Papeleria
 
         public NuevaVenta(int idUsuario)
         {
-            InitializeComponent();
+            /*InitializeComponent();
             this.idUsuario = idUsuario;
             mostrarTabla();
             timer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 3), IsEnabled = true };
-            tt = new ToolTip();
+            tt = new ToolTip();*/
         }
 
         public NuevaVenta(int idUsuario,int idVentaProducto, int modificar)
         {//modificar 0 = no, 1= si, 2 = ver
             // ver 1 = si, 2 = si, 3 = no
-            InitializeComponent();
+            /*InitializeComponent();
             this.idUsuario = idUsuario;
             this.idVenta = idVentaProducto;
             mostrarProductosAgregado();
@@ -79,12 +79,12 @@ namespace Papeleria
             }
             //
             timer = new DispatcherTimer { Interval = new TimeSpan(0, 0, 3), IsEnabled = true };
-            tt = new ToolTip();
+            tt = new ToolTip();*/
         }
 
         private void btnAñadir_Click(object sender, RoutedEventArgs e)
         {
-            if (tbCantidad.Text == "" || tbCantidad.Text == "Cantidad" ||Convert.ToInt16(tbCantidad.Text) ==0)
+            /*if (tbCantidad.Text == "" || tbCantidad.Text == "Cantidad" ||Convert.ToInt16(tbCantidad.Text) ==0)
             {   
                 MessageBox.Show("Ingrese una cantidad valida diferente de 0", "Alerta", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -110,24 +110,24 @@ namespace Papeleria
                     dataGridUsuarios.Items.Clear();
                     mostrarTabla();
                 }
-            }
+            }*/
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            new BaseDeDatos().añadirProductosdeRegreso(idProducto2, cantidad2);
+            /*new BaseDeDatos().añadirProductosdeRegreso(idProducto2, cantidad2);
             new BaseDeDatos().eliminarProductoDeVenta(idUnico);
             lbTotal.Content = new BaseDeDatos().obtenerTotalVenta(idVenta);
             total = Convert.ToDouble(lbTotal.Content);
             dataGridUsuarios.Items.Clear();
             mostrarTabla();
             dataGridUsuarios_Copy.Items.Clear();
-            mostrarProductosAgregado();
+            mostrarProductosAgregado();*/
         }
 
         private void btnTerminar_Click(object sender, RoutedEventArgs e)
         {
-            if (ver == 1)
+            /*if (ver == 1)
             {
                 new Vender(idUsuario).Show();
                 this.Close();
@@ -141,13 +141,13 @@ namespace Papeleria
             }else if(ver == 2)
             {
                 this.Close();
-            }
+            }*/
             
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            if (ver == 1 || ver == 3)
+            /*if (ver == 1 || ver == 3)
             {
                 new Vender(idUsuario).Show();
                 this.Close();
@@ -161,13 +161,13 @@ namespace Papeleria
                     new Vender(idUsuario).Show();
                     this.Close();
                 }
-            }
+            }*/
             
         }
        
         public void mostrarTabla()
         {
-            String consulta = "select idProducto, nombre, cantidad, precioUnitario,codigo from productos;";
+            /*String consulta = "select idProducto, nombre, cantidad, precioUnitario,codigo from productos;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -185,12 +185,12 @@ namespace Papeleria
                     codigo = row["codigo"].ToString()
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         public void mostrarProductosAgregado()
         {
-            String consulta = "Select idUnico,productos.idProducto, productos.nombre,productoVenta.cantidad,productos.precioUnitario, productos.Codigo from ProductoVenta join productos on ProductoVenta.idProducto = productos.idProducto where idProductoVenta = "+idVenta+";";
+            /*String consulta = "Select idUnico,productos.idProducto, productos.nombre,productoVenta.cantidad,productos.precioUnitario, productos.Codigo from ProductoVenta join productos on ProductoVenta.idProducto = productos.idProducto where idProductoVenta = "+idVenta+";";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -209,7 +209,7 @@ namespace Papeleria
                     codigo = row["codigo"].ToString()
                 };
                 dataGridUsuarios_Copy.Items.Add(data);
-            }
+            }*/
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -233,7 +233,7 @@ namespace Papeleria
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            String prueba = "";
+            /*String prueba = "";
             switch (opcion)
             {
                 case 1:
@@ -260,7 +260,7 @@ namespace Papeleria
                     codigo = row["codigo"].ToString()
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         private void tbBusqueda_GotFocus(object sender, RoutedEventArgs e)
@@ -270,7 +270,7 @@ namespace Papeleria
 
         private void dataGridUsuarios_KeyUp(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
+            /*switch (e.Key)
             {
                 case Key.Down:
                     llenarDGProductosEnVenta dato2 = (llenarDGProductosEnVenta)dataGridUsuarios.SelectedItem;
@@ -286,7 +286,7 @@ namespace Papeleria
                         idProducto = Convert.ToInt16(dato.idProducto);
                     }
                     break;
-            }
+            }*/
         }
 
         private void tbCantidad_KeyUp(object sender, KeyEventArgs e)
@@ -336,7 +336,7 @@ namespace Papeleria
 
         private void dataGridUsuarios_Copy_KeyUp(object sender, KeyEventArgs e)
         {
-            switch (e.Key)
+            /*switch (e.Key)
             {
                 case Key.Down:
                     llenarDGProductosEnVenta dato2 = (llenarDGProductosEnVenta)dataGridUsuarios_Copy.SelectedItem;
@@ -356,12 +356,12 @@ namespace Papeleria
                         cantidad2 = dato.Cantidad;
                     }
                     break;
-            }
+            }*/
         }
 
         private void dataGridUsuarios_Copy_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            llenarDGProductosEnVenta dato = (llenarDGProductosEnVenta)dataGridUsuarios_Copy.SelectedItem;
+            /*llenarDGProductosEnVenta dato = (llenarDGProductosEnVenta)dataGridUsuarios_Copy.SelectedItem;
 
             if (dato != null)
             {
@@ -370,19 +370,19 @@ namespace Papeleria
                 idUnico = Convert.ToInt16(dato.idUnico);
                 idProducto2 = Convert.ToInt16(dato.idProducto);
                 cantidad2 = dato.Cantidad;
-            }
+            }*/
         }
 
         private void dataGridUsuarios_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            llenarDGProductosEnVenta dato = (llenarDGProductosEnVenta)dataGridUsuarios.SelectedItem;
+            /*llenarDGProductosEnVenta dato = (llenarDGProductosEnVenta)dataGridUsuarios.SelectedItem;
 
             if (dato != null)
             {
                 btnAñadir.IsEnabled = true;
 
                 idProducto = Convert.ToInt16(dato.idProducto);
-            }
+            }*/
         }
 
         private void tbCantidad_GotFocus(object sender, RoutedEventArgs e)

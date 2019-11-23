@@ -34,7 +34,7 @@ namespace Papeleria
 
         public void mostrarTabla()
         {
-            String consulta = "select idProducto,nombre,cantidad ,precioUnitario ,descripcion,idProvedor,Codigo from productos;";
+            /*String consulta = "select idProducto,nombre,cantidad ,precioUnitario ,descripcion,idProvedor,Codigo from productos;";
             SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, new BaseDeDatos().obtenerConexion());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds);
@@ -54,12 +54,12 @@ namespace Papeleria
                     codigo = row["Codigo"].ToString(),
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         private void dataGridBuscador(int opcion, String dato)
         {
-            String prueba = "";
+            /*String prueba = "";
             switch (opcion)
             {
                 case 1:
@@ -88,7 +88,7 @@ namespace Papeleria
                     codigo = row["Codigo"].ToString(),
                 };
                 dataGridUsuarios.Items.Add(data);
-            }
+            }*/
         }
 
         private void tbBusqueda_GotFocus(object sender, RoutedEventArgs e)

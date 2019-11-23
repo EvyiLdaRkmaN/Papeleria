@@ -48,50 +48,50 @@ namespace Papeleria
 
         private void clickUsuarios(object sender, RoutedEventArgs e)
         {
-            new Usuarios(id).Show();
-            this.Close();
+            //new Usuarios(id).Show();
+            //this.Close();
         }
 
         private void btnProveedores_Click(object sender, RoutedEventArgs e)
         {
-            new Proveedores(id).Show();
-            this.Close();
+            //new Proveedores(id).Show();
+            //this.Close();
         }
 
         private void btnProductos_Click(object sender, RoutedEventArgs e)
         {
-            new Productos(id).Show();
-            this.Close();
+            //new Productos(id).Show();
+            //this.Close();
         }
 
         private void btnVentas_Click(object sender, RoutedEventArgs e)
         {
-            new Ventas(id).Show();
-            this.Close();
+            //new Ventas(id).Show();
+            //this.Close();
         }
 
         private void btnCaja_Copy_Click(object sender, RoutedEventArgs e)
         {
-            new Vender(id).Show();
-            this.Close();
+            //new Vender(id).Show();
+            //this.Close();
         }
 
         private void btnCaja_Click(object sender, RoutedEventArgs e)
         {
-            new Caja(id).Show();
-            this.Close();
+            //new Caja(id).Show();
+            //this.Close();
         }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-            new MainWindow().Show();
-            this.Close();
+            //new MainWindow().Show();
+            //this.Close();
         }
 
         private void btnCorte_Click(object sender, RoutedEventArgs e)
         {
-            new CortesDeCaja(id).Show();
-            this.Close();
+            //new CortesDeCaja(id).Show();
+            //this.Close();
         }
     }
 }

@@ -72,7 +72,7 @@ namespace Papeleria
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String nombre = tbNombre.Text,
+            /*String nombre = tbNombre.Text,
                 apellidoP = tbApellidoP.Text,
                 apellidoM = tbApellidoM.Text,
                 sexo = cmbSexo.SelectionBoxItem.ToString(),
@@ -127,7 +127,7 @@ namespace Papeleria
                         this.Close();
                     }
                 }
-            }
+            }*/
         }
         
         private void btncancelar_Click_1(object sender, RoutedEventArgs e)
